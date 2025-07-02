@@ -18,6 +18,8 @@ import ApiNode from './nodes/apiNode';
 import ConditionNode from './nodes/conditionNode';
 import TriggerNode from './nodes/triggerNode';
 import MailNode from './nodes/mailNode';
+import LoopNode from './nodes/loopNode';
+import AddNode from './nodes/addNode';
 
 const initialNodes = [
   { id: '1', position: { x: 0, y: 0 }, data: { label: '1' } },
@@ -31,7 +33,7 @@ function Flow() {
   const [edges, setEdges, onEdgesChange] = useEdgesState([]);
   const [isNodeDrawerOpen, setIsNodeDrawerOpen] = useState(false);
   const reactFlowInstance = useReactFlow();
-  const nodeTypes = { Code: CodeNode, Calender:CalenderNode, API: ApiNode, Condition:ConditionNode, Trigger: TriggerNode, Mail: MailNode };
+  const nodeTypes = { Code: CodeNode, Calender:CalenderNode, API: ApiNode, Condition:ConditionNode, Trigger: TriggerNode, Mail: MailNode, Loop: LoopNode, Add: AddNode };
 
   const onConnect = useCallback((params) => setEdges((eds) => addEdge(params, eds)), [setEdges]);
 

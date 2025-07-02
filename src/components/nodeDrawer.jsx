@@ -4,6 +4,8 @@ import API from "../assets/api_svg";
 import Condition from "../assets/condition";
 import Trigger from "../assets/trigger_svg";
 import Mail from "../assets/mail_svg";
+import Loop from "../assets/loop_svg";
+import AddValue from "../assets/add_value";
 
 const NodeDrawer = ({ isOpen, setIsOpen }) => {
 
@@ -72,6 +74,12 @@ const NodeDrawer = ({ isOpen, setIsOpen }) => {
                         </div>
                         <div draggable onDragStart={(event)=>handleDragStart(event, 'Mail')} onDragEnd={handleDragEnd} style={{cursor: 'grab' }}>
                             <Mail />
+                        </div>
+                        <div draggable onDragStart={(event)=>handleDragStart(event, 'Loop')} onDragEnd={handleDragEnd} style={{cursor: 'grab' }}>
+                            <Loop />
+                        </div>
+                        <div draggable onDragStart={(event)=>handleDragStart(event, 'Add')} onDragEnd={handleDragEnd} style={{cursor: 'grab' }}>
+                            <AddValue />
                         </div>
                     </div>
                 </div>
