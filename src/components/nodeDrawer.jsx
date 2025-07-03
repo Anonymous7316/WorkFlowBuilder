@@ -6,8 +6,10 @@ import Trigger from "../assets/trigger_svg";
 import Mail from "../assets/mail_svg";
 import Loop from "../assets/loop_svg";
 import AddValue from "../assets/add_value";
-import AgentNode from "./nodes/agentNode";
 import Agent from "../assets/agent_svg";
+import OpenAiModel from "../assets/openAI_svg";
+import Tool from "../assets/codeTool_svg";
+import Memory from "../assets/memory_svg";
 
 const NodeDrawer = ({ isOpen, setIsOpen }) => {
 
@@ -85,7 +87,19 @@ const NodeDrawer = ({ isOpen, setIsOpen }) => {
                         </div>
                         <div draggable onDragStart={(event)=>handleDragStart(event, 'Agent')} onDragEnd={handleDragEnd} style={{cursor: 'grab', display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center' }}>
                             <Agent/>
-                            <label htmlFor=""> Agent</label>
+                            <label htmlFor="">Agent</label>
+                        </div>
+                        <div draggable onDragStart={(event)=>handleDragStart(event, 'OpenAiModel')} onDragEnd={handleDragEnd} style={{cursor: 'grab', display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center' }}>
+                            <OpenAiModel/>
+                            <label htmlFor="">Chat Model</label>
+                        </div>
+                        <div draggable onDragStart={(event)=>handleDragStart(event, 'Memory')} onDragEnd={handleDragEnd} style={{cursor: 'grab', display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center' }}>
+                            <Memory/>
+                            <label htmlFor="">Memory</label>
+                        </div>
+                        <div draggable onDragStart={(event)=>handleDragStart(event, 'Tool')} onDragEnd={handleDragEnd} style={{cursor: 'grab', display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center' }}>
+                            <Tool/>
+                            <label htmlFor="">Tool</label>
                         </div>
                     </div>
                 </div>

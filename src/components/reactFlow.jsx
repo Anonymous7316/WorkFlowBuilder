@@ -21,6 +21,9 @@ import MailNode from './nodes/mailNode';
 import LoopNode from './nodes/loopNode';
 import AddNode from './nodes/addNode';
 import AgentNode from './nodes/agentNode';
+import OpenAiModelNode from './nodes/openAiModelNode';
+import MemoryNode from './nodes/memoryNode';
+import codeToolNode from './nodes/codeToolNode';
 
 const initialNodes = [
   { id: '1', position: { x: 0, y: 0 }, data: { label: '1' } },
@@ -34,7 +37,7 @@ function Flow() {
   const [edges, setEdges, onEdgesChange] = useEdgesState([]);
   const [isNodeDrawerOpen, setIsNodeDrawerOpen] = useState(false);
   const reactFlowInstance = useReactFlow();
-  const nodeTypes = { Code: CodeNode, Calender:CalenderNode, API: ApiNode, Condition:ConditionNode, Trigger: TriggerNode, Mail: MailNode, Loop: LoopNode, Add: AddNode, Agent: AgentNode };
+  const nodeTypes = { Code: CodeNode, Calender:CalenderNode, API: ApiNode, Condition:ConditionNode, Trigger: TriggerNode, Mail: MailNode, Loop: LoopNode, Add: AddNode, Agent: AgentNode, OpenAiModel: OpenAiModelNode, Memory: MemoryNode, Tool: codeToolNode };
 
   const onConnect = useCallback((params) => setEdges((eds) => addEdge(params, eds)), [setEdges]);
 
